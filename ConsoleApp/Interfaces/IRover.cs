@@ -3,6 +3,9 @@ using System.Drawing;
 
 namespace MarsRoverChallenge.ConsoleApp.Interfaces
 {
+    /// <summary>
+    /// Describes a basic rover
+    /// </summary>
     public interface IRover
     {
         public Point Position { get; }

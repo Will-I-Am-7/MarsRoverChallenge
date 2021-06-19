@@ -5,6 +5,9 @@ using System.Drawing;
 
 namespace MarsRoverChallenge.ConsoleApp.Interfaces
 {
+    /// <summary>
+    /// Handles the rovers on the grid and keeps track of their positions on the grid
+    /// </summary>
     public interface IRoverHandler
     {
         public IRover[,] Grid { get; }
