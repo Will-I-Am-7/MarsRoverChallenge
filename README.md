@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-- .NET 5 runtime must be installed on the host machine in order to run the application   
+- .NET 5 runtime or SDK must be installed on the host machine in order to run the application   
 <https://dotnet.microsoft.com/download/dotnet/5.0>
 
 ### Commands 
