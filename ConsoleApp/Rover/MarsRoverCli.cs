@@ -23,7 +23,7 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
 
         public void Start()
         {
-            _output.Information("Welcome to the mars rover CLI :) Enter 'x' to finish...");
+            _output.Information("Welcome to the mars rover CLI :) Enter 'x' to stop...");
 
             var rovers = GetRoversWithNavigation();
 
