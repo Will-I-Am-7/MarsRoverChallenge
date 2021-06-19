@@ -53,7 +53,7 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
 
         private void VisualizeRovers()
         {
-            _output.Information("\nPlateau\n");
+            _output.Information("\nPlateau:\n");
 
             for (int col = _roverHandler.UpperRightPosition.Y; col >= 0; col--)
             {
@@ -167,7 +167,7 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
         {
             IRover rover = null;
 
-            _output.Information("\nAdd rover starting position: ");
+            _output.Information("\nAdd rover starting position ('x' to stop): ");
 
             while (true)
             {
