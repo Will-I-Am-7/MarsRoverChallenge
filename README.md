@@ -9,7 +9,7 @@
 
 ### Commands 
 
-- Before attempting to build, run or test run the following command (**in the root of the project**):     
+- Before attempting to build, run or test execute the following command (**in the root of the project**):     
 ``dotnet restore ``
 
 - To build:   
