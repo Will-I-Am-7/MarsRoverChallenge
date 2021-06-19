@@ -10,11 +10,13 @@ namespace MarsRoverChallenge.ConsoleApp
     {
         private readonly IConsoleOutput _output;
         private readonly IRoverCli _roverCli;
+        private readonly IHostApplicationLifetime _lifeTime;
 
-        public ConsoleApplication(IConsoleOutput output, IRoverCli roverCli)
+        public ConsoleApplication(IConsoleOutput output, IRoverCli roverCli, IHostApplicationLifetime lifeTime)
         {
             _output = output;
             _roverCli = roverCli;
+            _lifeTime = lifeTime;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -22,6 +24,7 @@ namespace MarsRoverChallenge.ConsoleApp
             try
             {
                 _roverCli.Start();
+                _lifeTime.StopApplication();
             }
             catch (Exception ex)
             {
