@@ -45,10 +45,7 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
             }
 
             // Check bounds
-            if (rover.Position.X < 0
-                || rover.Position.Y < 0
-                || rover.Position.X > _upperRightPosition.X
-                || rover.Position.Y > _upperRightPosition.Y)
+            if (OutOfBounds(rover.Position.X, rover.Position.Y))
             {
                 return new NavigationResult
                 {
@@ -58,7 +55,7 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
             }
 
             // Check collision
-            if (_grid[rover.Position.X, rover.Position.Y] != null)
+            if (Collides(rover.Position.X, rover.Position.Y))
             {
                 return new NavigationResult
                 {
@@ -81,10 +78,7 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
                     Point newRoverPosition = rover.ProjectMovement();
 
                     // Check bounds
-                    if (newRoverPosition.X < 0
-                        || newRoverPosition.Y < 0
-                        || newRoverPosition.X > _upperRightPosition.X
-                        || newRoverPosition.Y > _upperRightPosition.Y)
+                    if (OutOfBounds(newRoverPosition.X, newRoverPosition.Y))
                     {
                         result = new NavigationResult
                         {
@@ -96,7 +90,7 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
                     }
 
                     // Check collision
-                    if (_grid[newRoverPosition.X, newRoverPosition.Y] != null)
+                    if (Collides(newRoverPosition.X, newRoverPosition.Y))
                     {
                         result = new NavigationResult
                         {
@@ -120,6 +114,16 @@ namespace MarsRoverChallenge.ConsoleApp.Rover
             _grid[rover.Position.X, rover.Position.Y] = rover;
 
             return result;
+        }
+
+        private bool OutOfBounds(int x, int y) 
+        {
+            return x < 0 || y < 0 || x > _upperRightPosition.X || y > _upperRightPosition.Y;
+        }
+
+        private bool Collides(int x, int y) 
+        {
+            return _grid[x, y] != null;
         }
 
         public IRover[,] Grid => _grid;
