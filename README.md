@@ -1,4 +1,4 @@
-# Platform 45 mars rover coding challenge
+# Mars rover coding challenge
 
 ## Building and running
 
